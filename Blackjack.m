@@ -91,7 +91,7 @@ while choice == 'h'
         if pTotal > 21
             choice = 's';
             pause(1.5);
-            fprintf('You went over 21, you busted. You lost. \n')
+            fprintf('You went over 21, you busted.\n')
             result = 2;
         end
     end
