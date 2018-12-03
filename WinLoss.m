@@ -3,12 +3,12 @@ game = 0;
 
 %player loses all chips
 if p_chips < 10
-    fprintf('You Lost All Your Chips: GAME OVER');
+    fprintf('\nYou lost All your chips: GAME OVER');
     game = 1;
 
 %player gets over 100000 chips they win
-    elseif p_chips >= 100000
-      fprintf('\nYou Won All the Chips: CONGRATS');
+elseif p_chips >= 1000000
+      fprintf('\nYour a millionaire: CONGRATS');
       game = 2;
     end
 end

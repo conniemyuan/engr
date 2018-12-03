@@ -27,8 +27,10 @@ fprintf('\n');
 %prints dealer and player hands
 phand = ['You were delt: ', card1, ' and ', card2,'\n'];
 fprintf(phand);
+pause(1.5);
 dhand = ['The dealer has: ', card3,'\n'];
 fprintf(dhand);
+pause(1.5);
 
 %determines the value of cards
 [C1] = Values(card1);
@@ -57,6 +59,7 @@ while choice == 'h'
 %if player hits
     if choice == 'h'
         [card4] = Deck();
+        pause(1.5);
         hand = ['You were delt: ', card4,'\n'];
         fprintf(hand);
         [C4] = Values(card4);
@@ -83,10 +86,11 @@ while choice == 'h'
             end
         end
 
-%if the player went over 
+%if the player went over
         pTotal = (pTotal + C4);
         if pTotal > 21
             choice = 's';
+            pause(1.5);
             fprintf('You went over 21, you busted. You lost. \n')
             result = 2;
         end
@@ -96,25 +100,27 @@ fprintf('\n')
 
 %if player stood, dealers turn
 if result == 0
-    [card5] = Deck();
+  [card5] = Deck();
 
 %prints dealers hand
-    dHand = ['The face down card the dealer had: ', card5,'\n'];
-    fprintf(dHand);
+  pause(1.5);
+  dHand = ['The face down card the dealer had: ', card5,'\n'];
+  fprintf(dHand);
 
 %determines dealers hand value
-    [C5] = Values(card5);
-    if (C3 + C5) == 22
-        C3 = C3 - 10;
-    end
-    dTotal = (C3 + C5);
+  [C5] = Values(card5);
+  if (C3 + C5) == 22
+      C3 = C3 - 10;
+  end
+  dTotal = (C3 + C5);
 
 %dealer has to hit if less than 17
-    while dTotal < 17
-        [card6] = Deck();
-        dHand = ['Dealer was delt: ', card6,'\n'];
-        fprintf(dHand);
-        [C6] = Values(card6);
+  while dTotal < 17
+      [card6] = Deck();
+      dHand = ['The dealer has to Hit. The dealer was delt: ', card6,'\n'];
+      pause(1.5);
+      fprintf(dHand);
+      [C6] = Values(card6);
 
 %determines whether or not Ace should be 1 or 11
         if (dTotal + C6) > 21
@@ -137,24 +143,28 @@ if result == 0
                 dTotal = dTotal - 10;
             end
         end
-        
+
 %determines if dealer busted
         dTotal = (dTotal + C6);
         if dTotal > 21
-            fprintf('Dealer busted. You Win! \n');
-            result = 1;
+          pause(1.5);
+          fprintf('The dealer busted. You Win! \n');
+          result = 1;
         end
     end
 
 %determines which result should be printed
     if result == 0
         if dTotal > pTotal
+          pause(1.5);
             fprintf('You lose. \n')
             result = 2;
         elseif pTotal > dTotal
+          pause(1.5);
             fprintf('You win! \n')
             result = 1;
         elseif pTotal == dTotal
+          pause(1.5);
             fprintf('You split. \n')
             result = 3;
         end
@@ -173,14 +183,15 @@ elseif result == 4
 end
 
 %prints players new chip count
-fprintf(['You now have ' num2str(p_chips)],'\n');
+pause(1.5);
+fprintf(['You now have ' num2str(p_chips)],'chips.\n');
 [game] = WinLoss(p_chips);
 
 if game == 1
     cont = 2;
 elseif game == 2
     cont = 2;
-    
+
 end
 end
 end
