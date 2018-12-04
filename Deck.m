@@ -34,9 +34,9 @@ end
 %string for special cards
 if deck(1) == 'A' || deck(1) == 'K' || deck(1) == 'Q' || deck(1) == 'J' || deck(1) == 'T'
     str = [deck(1), suit];
-
-%string for rest of cards
-    else
-      str = [num2str(deck(1)), suit];
-    end
+    
+    %string for rest of cards
+else
+    str = [num2str(deck(1)), suit];
+end
 end

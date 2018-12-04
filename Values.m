@@ -12,9 +12,9 @@ elseif CNum == 'Q'
     value = 10;
 elseif CNum == 'J'
     value = 10;
-
-%value for rest of cards
-    else
-      value = str2double(CNum);
-    end
+    
+    %value for rest of cards
+else
+    value = str2double(CNum);
+end
 end
