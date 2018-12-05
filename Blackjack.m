@@ -167,7 +167,7 @@ while cont == 0
                     result = 1;
                 elseif pTotal == dTotal
                     pause(1.5);
-                    fprintf('You and the push. \n')
+                    fprintf('You and the dealer push. \n')
                     result = 3;
                 end
             end
