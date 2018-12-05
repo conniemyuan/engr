@@ -2,7 +2,7 @@ clc;
 clear;
 
 %player initial chip count
-p_money=input('How much money did you bring to bet? (1$ = 10 chips): ');
+p_money=input('How much money did you bring to bet? ($1 = 10 chips): ');
 p_chips=p_money*10;
 fprintf(['You now have ' num2str(p_chips) ' chips. \n']);
 
@@ -16,7 +16,7 @@ while cont == 0
         cont = 2;
         fprintf('Quitting Blackjack... \n');
         p_money=p_chips/10;
-        fprintf(['You cashed out with ' num2str(p_money) '$. \n']);
+        fprintf(['You cashed out with $' num2str(p_money) '.\n']);
     end
     if cont == 0
         fprintf('\n');
